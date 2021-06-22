@@ -26,16 +26,37 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               width: size.width,
               height: size.height * .36,
-              color: AppColors.primary,
+              decoration: BoxDecoration(
+                gradient: AppColors.radialGradient,
+              ),
             ),
             Positioned(
               left: 0,
               right: 0,
               top: 40,
-              child: Image.asset(
-                AppImages.person,
-                width: 208,
-                height: size.height * 0.50,
+              child: Stack(
+                alignment: AlignmentDirectional.bottomCenter,
+                children: [
+                  Image.asset(
+                    AppImages.person,
+                    width: 208,
+                    height: size.height * 0.50,
+                  ),
+                  Container(
+                    height: 90,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: <Color>[
+                          Color.fromARGB(0, 255, 255, 255),
+                          Color.fromARGB(160, 255, 255, 255),
+                          Color.fromARGB(255, 255, 255, 255),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Positioned(
