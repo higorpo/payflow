@@ -17,4 +17,12 @@ class AppColors {
       Color(0xFFFF941A),
     ],
   );
+  static final radialGradientHome = RadialGradient(
+    center: Alignment(0, 1),
+    radius: 1.1,
+    colors: <Color>[
+      Color(0xFFFFC380),
+      Color(0xFFFF941A),
+    ],
+  );
 }
