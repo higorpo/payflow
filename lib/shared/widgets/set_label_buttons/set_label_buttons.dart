@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
 import 'package:payflow/shared/widgets/label_button/label_button.dart';
@@ -23,29 +24,32 @@ class SetButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: LabelButton(
-            label: primaryLabel,
-            onPressed: primaryOnPressed,
-            style: enablePrimaryColor ? TextStyles.buttonPrimary : null,
+    return Container(
+      color: AppColors.shape,
+      child: Row(
+        children: [
+          Expanded(
+            child: LabelButton(
+              label: primaryLabel,
+              onPressed: primaryOnPressed,
+              style: enablePrimaryColor ? TextStyles.buttonPrimary : null,
+            ),
           ),
-        ),
-        Container(
-          height: 56,
-          child: VerticalDivider(
-            width: 1,
-            thickness: 1,
+          Container(
+            height: 56,
+            child: VerticalDivider(
+              width: 1,
+              thickness: 1,
+            ),
           ),
-        ),
-        Expanded(
-          child: LabelButton(
-            label: secondaryLabel,
-            onPressed: secondaryOnPressed,
+          Expanded(
+            child: LabelButton(
+              label: secondaryLabel,
+              onPressed: secondaryOnPressed,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
