@@ -12,6 +12,7 @@ class SetButtons extends StatelessWidget {
   final VoidCallback secondaryOnPressed;
 
   final bool enablePrimaryColor;
+  final bool enableSecondaryColor;
 
   const SetButtons({
     Key? key,
@@ -20,6 +21,7 @@ class SetButtons extends StatelessWidget {
     required this.secondaryLabel,
     required this.secondaryOnPressed,
     this.enablePrimaryColor = false,
+    this.enableSecondaryColor = false,
   }) : super(key: key);
 
   @override
@@ -46,6 +48,7 @@ class SetButtons extends StatelessWidget {
             child: LabelButton(
               label: secondaryLabel,
               onPressed: secondaryOnPressed,
+              style: enableSecondaryColor ? TextStyles.buttonPrimary : null,
             ),
           ),
         ],
