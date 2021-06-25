@@ -20,7 +20,9 @@ class _BoletoInfoWidgetState extends State<BoletoInfoWidget> {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Container(
         decoration: BoxDecoration(
-            color: AppColors.secondary, borderRadius: BorderRadius.circular(5)),
+          color: AppColors.secondary,
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 24),
           child: Row(
@@ -38,21 +40,24 @@ class _BoletoInfoWidgetState extends State<BoletoInfoWidget> {
                 color: AppColors.background,
               ),
               ValueListenableBuilder<List<BoletoModel>>(
-                  valueListenable: controller.boletosNotifier,
-                  builder: (_, boletos, __) => Text.rich(TextSpan(
-                        text: "Você tem ",
+                valueListenable: controller.boletosNotifier,
+                builder: (_, boletos, __) => Text.rich(
+                  TextSpan(
+                    text: "Você tem ",
+                    style: TextStyles.captionBackground,
+                    children: [
+                      TextSpan(
+                        text: "${boletos.length} boletos\n",
+                        style: TextStyles.captionBoldBackground,
+                      ),
+                      TextSpan(
+                        text: "cadastrados para pagar",
                         style: TextStyles.captionBackground,
-                        children: [
-                          TextSpan(
-                            text: "${boletos.length} boletos\n",
-                            style: TextStyles.captionBoldBackground,
-                          ),
-                          TextSpan(
-                            text: "cadastrados para pagar",
-                            style: TextStyles.captionBackground,
-                          ),
-                        ],
-                      )))
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
